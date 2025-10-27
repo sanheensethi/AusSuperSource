@@ -27,13 +27,15 @@ export default function Navbar() {
       data-route="home"
       data-contract-version="1.0.0"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md border-b" : "bg-transparent"
+        isScrolled ? "bg-background/95 backdrop-blur-md border-b" : "bg-black/20 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center">
-            <h1 className="text-xl md:text-2xl font-bold text-primary">
+            <h1 className={`text-xl md:text-2xl font-bold transition-colors ${
+              isScrolled ? "text-primary" : "text-white"
+            }`}>
               AusSuperSource
             </h1>
           </div>
@@ -41,7 +43,9 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("services")}
-              className="text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors"
+              className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors ${
+                isScrolled ? "" : "text-white"
+              }`}
               data-nav-item="services"
               data-testid="link-services"
             >
@@ -49,7 +53,9 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => scrollToSection("team")}
-              className="text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors"
+              className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors ${
+                isScrolled ? "" : "text-white"
+              }`}
               data-nav-item="team"
               data-testid="link-team"
             >
@@ -57,7 +63,9 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors"
+              className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors ${
+                isScrolled ? "" : "text-white"
+              }`}
               data-nav-item="contact"
               data-testid="link-contact"
             >
@@ -77,6 +85,7 @@ export default function Navbar() {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={isScrolled ? "" : "text-white hover:text-white"}
               data-testid="button-mobile-menu"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
