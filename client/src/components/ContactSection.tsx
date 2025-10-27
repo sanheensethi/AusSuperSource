@@ -24,15 +24,26 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const contactFormSchema = z.object({
-  firstName: z.string().min(2, "First name must be at least 2 characters"),
-  lastName: z.string().min(2, "Last name must be at least 2 characters"),
+  name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().optional(),
-  serviceInterest: z.string().min(1, "Please select a service"),
+  state: z.string().min(1, "Please select a state"),
+  subject: z.string().min(2, "Subject is required"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
+
+const australianStates = [
+  { value: "NSW", label: "NSW" },
+  { value: "VIC", label: "VIC" },
+  { value: "QLD", label: "QLD" },
+  { value: "SA", label: "SA" },
+  { value: "WA", label: "WA" },
+  { value: "TAS", label: "TAS" },
+  { value: "ACT", label: "ACT" },
+  { value: "NT", label: "NT" },
+];
 
 export default function ContactSection() {
   const { toast } = useToast();
@@ -41,11 +52,11 @@ export default function ContactSection() {
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      name: "",
       email: "",
       phone: "",
-      serviceInterest: "",
+      state: "",
+      subject: "",
       message: "",
     },
   });
@@ -54,7 +65,6 @@ export default function ContactSection() {
     setIsSubmitting(true);
     console.log("Contact form submitted:", data);
 
-    // todo: remove mock functionality
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
@@ -71,7 +81,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Get in Touch
+            Contact Us
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Let's discuss how we can help with your SMSF needs
@@ -80,22 +90,19 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
             <div className="space-y-6">
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
                   <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-primary" />
+                    <MapPin className="h-6 w-6 text-primary" />
                   </div>
                 </div>
                 <div>
-                  <div className="font-medium mb-1">Email</div>
-                  <a
-                    href="mailto:contact@aussupersource.com.au"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    contact@aussupersource.com.au
-                  </a>
+                  <div className="font-medium mb-1">Address</div>
+                  <div className="text-muted-foreground">
+                    PO box 1213, Burwood, NSW 1805
+                  </div>
                 </div>
               </div>
 
@@ -108,10 +115,16 @@ export default function ContactSection() {
                 <div>
                   <div className="font-medium mb-1">Phone</div>
                   <a
-                    href="tel:1300123456"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    href="tel:0289701102"
+                    className="text-muted-foreground hover:text-primary transition-colors block"
                   >
-                    1300 123 456
+                    02 8970 1102
+                  </a>
+                  <a
+                    href="tel:0280048156"
+                    className="text-muted-foreground hover:text-primary transition-colors block"
+                  >
+                    02 8004 8156
                   </a>
                 </div>
               </div>
@@ -119,14 +132,17 @@ export default function ContactSection() {
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
                   <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-primary" />
+                    <Mail className="h-6 w-6 text-primary" />
                   </div>
                 </div>
                 <div>
-                  <div className="font-medium mb-1">Location</div>
-                  <div className="text-muted-foreground">
-                    Sydney, Australia
-                  </div>
+                  <div className="font-medium mb-1">Email</div>
+                  <a
+                    href="mailto:info@aussupersource.com.au"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    info@aussupersource.com.au
+                  </a>
                 </div>
               </div>
             </div>
@@ -145,56 +161,35 @@ export default function ContactSection() {
           <div>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <FormField
-                    control={form.control}
-                    name="firstName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>First Name *</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="John"
-                            {...field}
-                            data-field="contact.firstName"
-                            data-testid="input-first-name"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="lastName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Last Name *</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Doe"
-                            {...field}
-                            data-field="contact.lastName"
-                            data-testid="input-last-name"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name *</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Your name"
+                          {...field}
+                          data-field="contact.name"
+                          data-testid="input-name"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
                 <FormField
                   control={form.control}
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email *</FormLabel>
+                      <FormLabel>Email Address *</FormLabel>
                       <FormControl>
                         <Input
                           type="email"
-                          placeholder="john.doe@example.com"
+                          placeholder="your.email@example.com"
                           {...field}
                           data-field="contact.email"
                           data-testid="input-email"
@@ -210,7 +205,7 @@ export default function ContactSection() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Phone</FormLabel>
+                      <FormLabel>Contact No.</FormLabel>
                       <FormControl>
                         <Input
                           type="tel"
@@ -227,26 +222,46 @@ export default function ContactSection() {
 
                 <FormField
                   control={form.control}
-                  name="serviceInterest"
+                  name="state"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Service Interest *</FormLabel>
+                      <FormLabel>State *</FormLabel>
                       <Select
                         onValueChange={field.onChange}
                         defaultValue={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger data-field="contact.serviceInterest" data-testid="select-service">
-                            <SelectValue placeholder="Select a service" />
+                          <SelectTrigger data-field="contact.state" data-testid="select-state">
+                            <SelectValue placeholder="Select state" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="smsf-auditing">SMSF Auditing</SelectItem>
-                          <SelectItem value="outsourcing">Outsourcing SMSF Solution</SelectItem>
-                          <SelectItem value="pre-audit">Pre-Audit Readiness</SelectItem>
-                          <SelectItem value="general">General Inquiry</SelectItem>
+                          {australianStates.map((state) => (
+                            <SelectItem key={state.value} value={state.value}>
+                              {state.label}
+                            </SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Subject *</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Subject"
+                          {...field}
+                          data-field="contact.subject"
+                          data-testid="input-subject"
+                        />
+                      </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -260,7 +275,7 @@ export default function ContactSection() {
                       <FormLabel>Message *</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Tell us about your SMSF needs..."
+                          placeholder="Your message / Suggestion"
                           className="min-h-[120px]"
                           {...field}
                           data-field="contact.message"

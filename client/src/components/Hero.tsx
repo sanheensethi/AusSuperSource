@@ -1,22 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award } from "lucide-react";
+import { Link } from "wouter";
 import heroImage from "@assets/generated_images/Professional_SMSF_office_collaboration_e65dfd08.png";
 
 export default function Hero() {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToServices = () => {
-    const element = document.getElementById("services");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
@@ -31,45 +18,54 @@ export default function Hero() {
           <div className="flex items-center gap-2 mb-6">
             <Award className="h-6 w-6 text-primary" />
             <span className="text-sm font-medium text-white/90">
-              Award-Winning SMSF Solutions
+              8+ Years of SMSF Excellence
             </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-            SMSF Expertise{" "}
-            <span className="text-primary">You Can Count On</span>
+            Stress Free{" "}
+            <span className="text-primary">SMSF Management</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-            At AusSuperSource, we simplify SMSF management with expert auditing,
-            outsourcing, and compliance solutions tailored for Australian
-            self-managed super funds.
+            Expert advice and administration of SMSF. Facilitating Accountants & Financial advisors on wholesale SMSF solution provider throughout Australia.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Button
-              size="lg"
-              onClick={scrollToContact}
-              className="text-base"
-              data-action="hero.contact"
-              data-testid="button-contact-us"
-            >
-              Contact Us Today
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={scrollToServices}
-              className="text-base bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20"
-              data-action="hero.services"
-              data-testid="button-our-services"
-            >
-              Our Services
-            </Button>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                className="text-base"
+                data-action="hero.contact"
+                data-testid="button-contact-us"
+              >
+                Contact Us Today
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link href="/services">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20"
+                data-action="hero.services"
+                data-testid="button-our-services"
+              >
+                Our Services
+              </Button>
+            </Link>
           </div>
 
           <div className="flex flex-wrap gap-6 items-center">
+            <div className="flex items-center gap-2">
+              <div className="h-12 w-12 rounded-md bg-white/10 backdrop-blur-md flex items-center justify-center">
+                <Award className="h-6 w-6 text-primary" />
+              </div>
+              <div className="text-white/90">
+                <div className="text-xs font-medium">ASIC Registered</div>
+                <div className="text-xs text-white/70">SMSF Auditor</div>
+              </div>
+            </div>
             <div className="flex items-center gap-2">
               <div className="h-12 w-12 rounded-md bg-white/10 backdrop-blur-md flex items-center justify-center">
                 <Award className="h-6 w-6 text-primary" />
@@ -84,17 +80,8 @@ export default function Hero() {
                 <Award className="h-6 w-6 text-primary" />
               </div>
               <div className="text-white/90">
-                <div className="text-xs font-medium">CA ANZ</div>
-                <div className="text-xs text-white/70">Member</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="h-12 w-12 rounded-md bg-white/10 backdrop-blur-md flex items-center justify-center">
-                <Award className="h-6 w-6 text-primary" />
-              </div>
-              <div className="text-white/90">
-                <div className="text-xs font-medium">ATO</div>
-                <div className="text-xs text-white/70">Registered</div>
+                <div className="text-xs font-medium">300+ SMSFs</div>
+                <div className="text-xs text-white/70">Under Administration</div>
               </div>
             </div>
           </div>

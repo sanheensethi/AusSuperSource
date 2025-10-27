@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from "react";
-import { CheckCircle, Clock, Calendar, Users } from "lucide-react";
+import { CheckCircle, Clock, Users, Building } from "lucide-react";
 
 interface StatCardProps {
   icon: React.ReactNode;
   value: number;
   suffix?: string;
+  prefix?: string;
   label: string;
   dataKpi: string;
 }
 
-function StatCard({ icon, value, suffix = "", label, dataKpi }: StatCardProps) {
+function StatCard({ icon, value, suffix = "", prefix = "", label, dataKpi }: StatCardProps) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -57,7 +58,7 @@ function StatCard({ icon, value, suffix = "", label, dataKpi }: StatCardProps) {
         {icon}
       </div>
       <div className="text-4xl md:text-5xl font-bold mb-2" data-testid={`stat-${dataKpi}`}>
-        {count}{suffix}
+        {prefix}{count}{suffix}
       </div>
       <div className="text-sm md:text-base text-muted-foreground">
         {label}
@@ -72,7 +73,7 @@ export default function StatsSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Trusted by Hundreds Across Australia
+            Trusted SMSF Partner Across Australia
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Delivering exceptional SMSF services with proven results and unmatched expertise
@@ -84,27 +85,29 @@ export default function StatsSection() {
             icon={<CheckCircle className="h-12 w-12 md:h-16 md:w-16" />}
             value={100}
             suffix="%"
-            label="Compliant SMSF Audits"
-            dataKpi="compliant-audits"
+            label="ASIC Registered Auditor"
+            dataKpi="asic-registered"
           />
           <StatCard
             icon={<Users className="h-12 w-12 md:h-16 md:w-16" />}
-            value={11}
+            value={8}
             suffix="+"
             label="Years Experience"
             dataKpi="years-experience"
           />
           <StatCard
-            icon={<Calendar className="h-12 w-12 md:h-16 md:w-16" />}
-            value={5}
-            label="Business Days Turnaround"
-            dataKpi="business-days"
+            icon={<Building className="h-12 w-12 md:h-16 md:w-16" />}
+            value={300}
+            suffix="+"
+            label="SMSFs Administered"
+            dataKpi="smsf-administered"
           />
           <StatCard
             icon={<Clock className="h-12 w-12 md:h-16 md:w-16" />}
-            value={48}
-            label="Hours Processing Time"
-            dataKpi="processing-hours"
+            value={25}
+            suffix="+"
+            label="Years Director Experience"
+            dataKpi="director-experience"
           />
         </div>
       </div>
