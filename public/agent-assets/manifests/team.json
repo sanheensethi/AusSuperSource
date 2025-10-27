@@ -1,0 +1,20 @@
+{
+  "routeId": "team",
+  "version": "1.0.0",
+  "kpis": [],
+  "actions": [],
+  "lists": [
+    {
+      "id": "team_members",
+      "selector": "[data-list='team-members']",
+      "row": "[data-entity-type='team-member']",
+      "cols": { 
+        "name": "[data-col='name']",
+        "role": "[data-col='role']",
+        "bio": "[data-col='bio']",
+        "email": "[data-col='email']"
+      }
+    }
+  ],
+  "forms": []
+}

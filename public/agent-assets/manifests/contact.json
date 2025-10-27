@@ -1,0 +1,40 @@
+{
+  "routeId": "contact",
+  "version": "1.0.0",
+  "kpis": [],
+  "actions": [
+    {
+      "id": "contact.submit",
+      "dispatch": { 
+        "type": "SubmitContactForm", 
+        "payloadSchema": { 
+          "name": "string",
+          "email": "string",
+          "phone": "string",
+          "state": "string",
+          "subject": "string",
+          "message": "string"
+        } 
+      },
+      "effects": [
+        { "emits": "dom", "selector": "[role='status']" }
+      ],
+      "errors": ["VALIDATION", "NETWORK", "EXCEPTION"]
+    }
+  ],
+  "lists": [],
+  "forms": [
+    {
+      "id": "contact",
+      "selector": "form",
+      "fields": [
+        { "id": "contact.name", "selector": "[data-field='contact.name']" },
+        { "id": "contact.email", "selector": "[data-field='contact.email']" },
+        { "id": "contact.phone", "selector": "[data-field='contact.phone']" },
+        { "id": "contact.state", "selector": "[data-field='contact.state']" },
+        { "id": "contact.subject", "selector": "[data-field='contact.subject']" },
+        { "id": "contact.message", "selector": "[data-field='contact.message']" }
+      ]
+    }
+  ]
+}

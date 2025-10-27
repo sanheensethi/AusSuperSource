@@ -14,7 +14,7 @@ const steps = [
 
 export default function Accountants() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" data-route="accountants" data-contract-version="1.0.0" data-ready="accountants-page">
       <Navbar />
       
       <section className="pt-32 pb-20 md:pt-40 md:pb-24 lg:pb-32">

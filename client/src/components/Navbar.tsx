@@ -50,6 +50,7 @@ export default function Navbar() {
                 className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors ${
                   (isScrolled || !isHome) ? "" : "text-white"
                 }`}
+                data-nav-item="home"
                 data-testid="link-home"
               >
                 Home
@@ -60,6 +61,7 @@ export default function Navbar() {
                 className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors ${
                   (isScrolled || !isHome) ? "" : "text-white"
                 }`}
+                data-nav-item="about"
                 data-testid="link-about"
               >
                 About Us
@@ -70,6 +72,7 @@ export default function Navbar() {
                 className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors ${
                   (isScrolled || !isHome) ? "" : "text-white"
                 }`}
+                data-nav-item="services"
                 data-testid="link-services"
               >
                 Services
@@ -80,6 +83,7 @@ export default function Navbar() {
                 className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors ${
                   (isScrolled || !isHome) ? "" : "text-white"
                 }`}
+                data-nav-item="team"
                 data-testid="link-team"
               >
                 Our Team
@@ -112,6 +116,7 @@ export default function Navbar() {
                 className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors ${
                   (isScrolled || !isHome) ? "" : "text-white"
                 }`}
+                data-nav-item="contact"
                 data-testid="link-contact"
               >
                 Contact

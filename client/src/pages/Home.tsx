@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" data-route="home" data-contract-version="1.0.0" data-ready="home-page">
       <Navbar />
       <Hero />
       <StatsSection />

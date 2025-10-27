@@ -1,0 +1,32 @@
+{
+  "routeId": "login",
+  "version": "1.0.0",
+  "kpis": [],
+  "actions": [
+    {
+      "id": "login.submit",
+      "dispatch": { 
+        "type": "LoginUser", 
+        "payloadSchema": { 
+          "username": "string",
+          "password": "string"
+        } 
+      },
+      "effects": [
+        { "emits": "dom", "selector": "[role='status']" }
+      ],
+      "errors": ["VALIDATION", "UNAUTH", "NETWORK", "EXCEPTION"]
+    }
+  ],
+  "lists": [],
+  "forms": [
+    {
+      "id": "login",
+      "selector": "form",
+      "fields": [
+        { "id": "login.username", "selector": "[data-field='login.username']" },
+        { "id": "login.password", "selector": "[data-field='login.password']" }
+      ]
+    }
+  ]
+}

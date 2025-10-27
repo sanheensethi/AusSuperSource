@@ -1,0 +1,59 @@
+{
+  "routes": [
+    {
+      "routeId": "home",
+      "path": "/",
+      "manifest": "/agent-assets/manifests/home.json",
+      "capabilities": "/agent-assets/capabilities.json"
+    },
+    {
+      "routeId": "about",
+      "path": "/about",
+      "manifest": null,
+      "capabilities": null
+    },
+    {
+      "routeId": "services",
+      "path": "/services",
+      "manifest": "/agent-assets/manifests/services.json",
+      "capabilities": null
+    },
+    {
+      "routeId": "team",
+      "path": "/team",
+      "manifest": "/agent-assets/manifests/team.json",
+      "capabilities": null
+    },
+    {
+      "routeId": "accountants",
+      "path": "/accountants",
+      "manifest": null,
+      "capabilities": null
+    },
+    {
+      "routeId": "trustees",
+      "path": "/trustees",
+      "manifest": null,
+      "capabilities": null
+    },
+    {
+      "routeId": "contact",
+      "path": "/contact",
+      "manifest": "/agent-assets/manifests/contact.json",
+      "capabilities": null
+    },
+    {
+      "routeId": "login",
+      "path": "/login",
+      "manifest": "/agent-assets/manifests/login.json",
+      "capabilities": null
+    },
+    {
+      "routeId": "privacy",
+      "path": "/privacy",
+      "manifest": null,
+      "capabilities": null
+    }
+  ],
+  "version": "1.0.0"
+}

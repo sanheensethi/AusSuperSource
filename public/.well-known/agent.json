@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "index": "/agent-assets/index.json",
+  "description": "Australian Super Source - SMSF Services Agent Contract",
+  "capabilities": "/agent-assets/capabilities.json"
+}

@@ -4,7 +4,7 @@ import ServicesSection from "@/components/ServicesSection";
 
 export default function Services() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" data-route="services" data-contract-version="1.0.0" data-ready="services-page">
       <Navbar />
       
       <div className="pt-20">

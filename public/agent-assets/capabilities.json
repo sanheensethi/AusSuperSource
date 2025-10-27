@@ -1,0 +1,63 @@
+{
+  "routeId": "home",
+  "capabilities": [
+    {
+      "id": "home.asic_registered",
+      "type": "kpi",
+      "critical": true,
+      "tags": ["stats", "smsf"],
+      "source": { "page": "home", "kpiId": "asic_registered" }
+    },
+    {
+      "id": "home.years_experience",
+      "type": "kpi",
+      "critical": true,
+      "tags": ["stats", "smsf"],
+      "source": { "page": "home", "kpiId": "years_experience" }
+    },
+    {
+      "id": "home.smsf_administered",
+      "type": "kpi",
+      "critical": true,
+      "tags": ["stats", "smsf"],
+      "source": { "page": "home", "kpiId": "smsf_administered" }
+    },
+    {
+      "id": "home.director_experience",
+      "type": "kpi",
+      "critical": true,
+      "tags": ["stats", "smsf"],
+      "source": { "page": "home", "kpiId": "director_experience" }
+    },
+    {
+      "id": "contact.submit",
+      "type": "action",
+      "critical": true,
+      "tags": ["contact", "form"],
+      "source": { "page": "home", "actionId": "contact.submit" }
+    },
+    {
+      "id": "services.list",
+      "type": "view",
+      "critical": true,
+      "tags": ["services", "list"],
+      "source": { "page": "home" }
+    },
+    {
+      "id": "team.list",
+      "type": "view",
+      "critical": true,
+      "tags": ["team", "list"],
+      "source": { "page": "home" }
+    },
+    {
+      "id": "login.submit",
+      "type": "action",
+      "critical": true,
+      "tags": ["login", "auth"],
+      "source": { "page": "login", "actionId": "login.submit" }
+    }
+  ],
+  "manifest": "/agent-assets/manifests/home.json",
+  "version": "1.0.0"
+}

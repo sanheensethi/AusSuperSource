@@ -1,0 +1,18 @@
+{
+  "routeId": "services",
+  "version": "1.0.0",
+  "kpis": [],
+  "actions": [],
+  "lists": [
+    {
+      "id": "services",
+      "selector": "[data-list='services']",
+      "row": "[data-entity-type='service']",
+      "cols": { 
+        "title": "[data-col='title']",
+        "description": "[data-col='description']"
+      }
+    }
+  ],
+  "forms": []
+}

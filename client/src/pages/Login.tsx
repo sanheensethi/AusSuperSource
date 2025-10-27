@@ -21,7 +21,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" data-route="login" data-contract-version="1.0.0" data-ready="login-page">
       <Navbar />
       
       <section className="flex-1 pt-32 pb-20 md:pt-40 md:pb-24 flex items-center justify-center">
@@ -45,6 +45,7 @@ export default function Login() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="Enter your username"
+                  data-field="login.username"
                   data-testid="input-username"
                   required
                 />
@@ -58,6 +59,7 @@ export default function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
+                  data-field="login.password"
                   data-testid="input-password"
                   required
                 />
@@ -66,6 +68,7 @@ export default function Login() {
               <Button
                 type="submit"
                 className="w-full"
+                data-action="login.submit"
                 data-testid="button-sign-in"
               >
                 Sign In

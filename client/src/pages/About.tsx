@@ -4,7 +4,7 @@ import { CheckCircle } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" data-route="about" data-contract-version="1.0.0" data-ready="about-page">
       <Navbar />
       
       <section className="pt-32 pb-20 md:pt-40 md:pb-24 lg:pb-32">

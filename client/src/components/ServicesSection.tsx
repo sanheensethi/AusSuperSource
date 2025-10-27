@@ -52,16 +52,18 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" data-list="services">
           {services.map((service, index) => (
             <Card
               key={index}
               className="p-6 md:p-8 hover-elevate transition-all duration-300"
+              data-entity-type="service"
+              data-entity-id={`service-${index}`}
               data-testid={`service-${index}`}
             >
               <div className="text-primary mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <h3 className="text-xl font-semibold mb-3" data-col="title">{service.title}</h3>
+              <p className="text-muted-foreground leading-relaxed" data-col="description">
                 {service.description}
               </p>
             </Card>

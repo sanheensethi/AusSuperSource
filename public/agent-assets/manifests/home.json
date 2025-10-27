@@ -1,0 +1,98 @@
+{
+  "routeId": "home",
+  "version": "1.0.0",
+  "kpis": [
+    {
+      "id": "asic_registered",
+      "selector": "[data-kpi='asic-registered']",
+      "type": "integer",
+      "wait": { "timeoutMs": 3000, "stableForMs": 100 },
+      "visibleWhen": [
+        { "type": "domAttr", "selector": "[data-route='home']", "name": "data-ready", "equals": "home-page" }
+      ]
+    },
+    {
+      "id": "years_experience",
+      "selector": "[data-kpi='years-experience']",
+      "type": "integer",
+      "wait": { "timeoutMs": 3000, "stableForMs": 100 },
+      "visibleWhen": [
+        { "type": "domAttr", "selector": "[data-route='home']", "name": "data-ready", "equals": "home-page" }
+      ]
+    },
+    {
+      "id": "smsf_administered",
+      "selector": "[data-kpi='smsf-administered']",
+      "type": "integer",
+      "wait": { "timeoutMs": 3000, "stableForMs": 100 },
+      "visibleWhen": [
+        { "type": "domAttr", "selector": "[data-route='home']", "name": "data-ready", "equals": "home-page" }
+      ]
+    },
+    {
+      "id": "director_experience",
+      "selector": "[data-kpi='director-experience']",
+      "type": "integer",
+      "wait": { "timeoutMs": 3000, "stableForMs": 100 },
+      "visibleWhen": [
+        { "type": "domAttr", "selector": "[data-route='home']", "name": "data-ready", "equals": "home-page" }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "contact.submit",
+      "dispatch": { 
+        "type": "SubmitContactForm", 
+        "payloadSchema": { 
+          "name": "string",
+          "email": "string",
+          "phone": "string",
+          "state": "string",
+          "subject": "string",
+          "message": "string"
+        } 
+      },
+      "effects": [
+        { "emits": "dom", "selector": "[role='status']" }
+      ],
+      "errors": ["VALIDATION", "NETWORK", "EXCEPTION"]
+    }
+  ],
+  "lists": [
+    {
+      "id": "services",
+      "selector": "[data-list='services']",
+      "row": "[data-entity-type='service']",
+      "cols": { 
+        "title": "[data-col='title']",
+        "description": "[data-col='description']"
+      }
+    },
+    {
+      "id": "team_members",
+      "selector": "[data-list='team-members']",
+      "row": "[data-entity-type='team-member']",
+      "cols": { 
+        "name": "[data-col='name']",
+        "role": "[data-col='role']",
+        "bio": "[data-col='bio']",
+        "email": "[data-col='email']"
+      }
+    }
+  ],
+  "forms": [
+    {
+      "id": "contact",
+      "selector": "form",
+      "fields": [
+        { "id": "contact.name", "selector": "[data-field='contact.name']" },
+        { "id": "contact.email", "selector": "[data-field='contact.email']" },
+        { "id": "contact.phone", "selector": "[data-field='contact.phone']" },
+        { "id": "contact.state", "selector": "[data-field='contact.state']" },
+        { "id": "contact.subject", "selector": "[data-field='contact.subject']" },
+        { "id": "contact.message", "selector": "[data-field='contact.message']" }
+      ]
+    }
+  ]
+}

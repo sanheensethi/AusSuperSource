@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" data-route="privacy" data-contract-version="1.0.0" data-ready="privacy-page">
       <Navbar />
       
       <section className="pt-32 pb-20 md:pt-40 md:pb-24 lg:pb-32">

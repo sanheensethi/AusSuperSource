@@ -31,7 +31,7 @@ export default function TeamSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" data-list="team-members">
           {teamMembers.map((member, index) => (
             <Card
               key={index}
@@ -46,15 +46,16 @@ export default function TeamSection() {
                   alt={member.name}
                   className="w-32 h-32 rounded-full mb-4 object-cover"
                 />
-                <h3 className="text-2xl font-semibold mb-1">{member.name}</h3>
-                <p className="text-primary font-medium text-sm mb-2">{member.role}</p>
+                <h3 className="text-2xl font-semibold mb-1" data-col="name">{member.name}</h3>
+                <p className="text-primary font-medium text-sm mb-2" data-col="role">{member.role}</p>
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+              <p className="text-muted-foreground leading-relaxed mb-4 text-sm" data-col="bio">
                 {member.bio}
               </p>
               <a
                 href={`mailto:${member.email}`}
                 className="flex items-center justify-center gap-2 text-primary hover:underline text-sm"
+                data-col="email"
               >
                 <Mail className="h-4 w-4" />
                 {member.email}
