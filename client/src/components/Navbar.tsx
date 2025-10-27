@@ -121,6 +121,7 @@ export default function Navbar() {
               <Button
                 variant="outline"
                 size="sm"
+                className={(isScrolled || !isHome) ? "" : "text-white border-white/40 hover:bg-white/10"}
                 data-testid="button-login"
               >
                 Client Login
