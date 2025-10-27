@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-32 md:py-40">
         <div className="max-w-4xl">
           <div className="flex items-center gap-2 mb-6">
-            <Award className="h-6 w-6 text-primary" />
+            <Award className="h-6 w-6 text-white" />
             <span className="text-sm font-medium text-white/90">
               8+ Years of SMSF Excellence
             </span>
@@ -58,30 +58,30 @@ export default function Hero() {
 
           <div className="flex flex-wrap gap-6 items-center">
             <div className="flex items-center gap-2">
-              <div className="h-12 w-12 rounded-md bg-white/10 backdrop-blur-md flex items-center justify-center">
-                <Award className="h-6 w-6 text-primary" />
+              <div className="h-12 w-12 rounded-md bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
+                <Award className="h-6 w-6 text-white" />
               </div>
-              <div className="text-white/90">
-                <div className="text-xs font-medium">ASIC Registered</div>
-                <div className="text-xs text-white/70">SMSF Auditor</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="h-12 w-12 rounded-md bg-white/10 backdrop-blur-md flex items-center justify-center">
-                <Award className="h-6 w-6 text-primary" />
-              </div>
-              <div className="text-white/90">
-                <div className="text-xs font-medium">CPA Australia</div>
-                <div className="text-xs text-white/70">Accredited</div>
+              <div className="text-white">
+                <div className="text-xs font-semibold">ASIC Registered</div>
+                <div className="text-xs text-white/80">SMSF Auditor</div>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <div className="h-12 w-12 rounded-md bg-white/10 backdrop-blur-md flex items-center justify-center">
-                <Award className="h-6 w-6 text-primary" />
+              <div className="h-12 w-12 rounded-md bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
+                <Award className="h-6 w-6 text-white" />
               </div>
-              <div className="text-white/90">
-                <div className="text-xs font-medium">300+ SMSFs</div>
-                <div className="text-xs text-white/70">Under Administration</div>
+              <div className="text-white">
+                <div className="text-xs font-semibold">CPA Australia</div>
+                <div className="text-xs text-white/80">Accredited</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="h-12 w-12 rounded-md bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
+                <Award className="h-6 w-6 text-white" />
+              </div>
+              <div className="text-white">
+                <div className="text-xs font-semibold">300+ SMSFs</div>
+                <div className="text-xs text-white/80">Under Administration</div>
               </div>
             </div>
           </div>
