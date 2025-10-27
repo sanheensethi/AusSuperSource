@@ -11,6 +11,7 @@ import Accountants from "@/pages/Accountants";
 import Trustees from "@/pages/Trustees";
 import Contact from "@/pages/Contact";
 import Login from "@/pages/Login";
+import Privacy from "@/pages/Privacy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/trustees" component={Trustees} />
       <Route path="/contact" component={Contact} />
       <Route path="/login" component={Login} />
+      <Route path="/privacy" component={Privacy} />
       <Route component={NotFound} />
     </Switch>
   );
