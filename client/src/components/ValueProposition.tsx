@@ -37,7 +37,7 @@ const benefits = [
 
 export default function ValueProposition() {
   return (
-    <section className="py-20 md:py-24 lg:py-32 bg-muted/30">
+    <section className="py-20 md:py-24 lg:py-32 bg-muted">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"

@@ -31,7 +31,7 @@ export default function Navbar() {
       data-route="home"
       data-contract-version="1.0.0"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md border-b" : isHome ? "bg-black/20 backdrop-blur-sm" : "bg-background/95 backdrop-blur-md border-b"
+        isScrolled ? "bg-white/95 backdrop-blur-md border-b" : isHome ? "bg-black/20 backdrop-blur-sm" : "bg-white/95 backdrop-blur-md border-b"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">

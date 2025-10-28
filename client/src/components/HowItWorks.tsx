@@ -26,7 +26,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 md:py-24 lg:py-32 bg-muted/30">
+    <section className="py-20 md:py-24 lg:py-32 bg-[hsl(var(--dark-section))] text-[hsl(var(--dark-section-foreground))]">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -38,7 +38,7 @@ export default function HowItWorks() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             How It Works
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-[hsl(var(--dark-section-foreground))]/70 max-w-2xl mx-auto">
             Simple steps. Maximum compliance. Zero stress.
           </p>
         </motion.div>
@@ -66,7 +66,7 @@ export default function HowItWorks() {
                   {step.title}
                 </h3>
                 
-                <p className="text-muted-foreground">
+                <p className="text-[hsl(var(--dark-section-foreground))]/70">
                   {step.description}
                 </p>
               </div>
