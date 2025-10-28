@@ -90,64 +90,77 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                </div>
+            <h3 className="text-2xl font-semibold mb-6">Our Locations</h3>
+            
+            {/* Sydney - Head Office */}
+            <div className="mb-8 p-6 bg-muted/30 rounded-lg hover-elevate transition-all duration-300">
+              <div className="flex items-start gap-3 mb-3">
+                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <div className="font-medium mb-1">Address</div>
-                  <div className="text-muted-foreground">
-                    PO box 1213, Burwood, NSW 1805
-                  </div>
+                  <h4 className="font-semibold text-lg mb-1">Sydney (Head Office)</h4>
+                  <p className="text-muted-foreground text-sm">
+                    PO Box 1213, Burwood, NSW 1805
+                  </p>
                 </div>
               </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                </div>
-                <div>
-                  <div className="font-medium mb-1">Phone</div>
-                  <a
-                    href="tel:0289701102"
-                    className="text-muted-foreground hover:text-primary transition-colors block"
-                  >
+              <div className="flex items-start gap-3 mb-2">
+                <Phone className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                <div className="space-y-1">
+                  <a href="tel:0289701102" className="text-sm text-muted-foreground hover:text-primary transition-colors block">
                     02 8970 1102
                   </a>
-                  <a
-                    href="tel:0280048156"
-                    className="text-muted-foreground hover:text-primary transition-colors block"
-                  >
+                  <a href="tel:0280048156" className="text-sm text-muted-foreground hover:text-primary transition-colors block">
                     02 8004 8156
                   </a>
                 </div>
               </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                </div>
-                <div>
-                  <div className="font-medium mb-1">Email</div>
-                  <a
-                    href="mailto:info@aussupersource.com.au"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    info@aussupersource.com.au
-                  </a>
-                </div>
+              <div className="flex items-start gap-3">
+                <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                <a href="mailto:info@aussupersource.com.au" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  info@aussupersource.com.au
+                </a>
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-muted/30 rounded-lg">
+            {/* Victoria - Melbourne */}
+            <div className="mb-8 p-6 bg-muted/30 rounded-lg hover-elevate transition-all duration-300">
+              <div className="flex items-start gap-3 mb-3">
+                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">Victoria (Melbourne)</h4>
+                  <p className="text-muted-foreground text-sm">
+                    Melbourne, VIC
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                <a href="mailto:info@aussupersource.com.au" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  info@aussupersource.com.au
+                </a>
+              </div>
+            </div>
+
+            {/* Adelaide - SA */}
+            <div className="mb-8 p-6 bg-muted/30 rounded-lg hover-elevate transition-all duration-300">
+              <div className="flex items-start gap-3 mb-3">
+                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">Adelaide (SA)</h4>
+                  <p className="text-muted-foreground text-sm">
+                    Adelaide, SA
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                <a href="mailto:info@aussupersource.com.au" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  info@aussupersource.com.au
+                </a>
+              </div>
+            </div>
+
+            <div className="p-6 bg-primary/5 rounded-lg border-l-4 border-primary">
               <h4 className="font-semibold mb-2">Business Hours</h4>
               <p className="text-muted-foreground text-sm">
                 Monday - Friday: 9:00 AM - 5:00 PM AEST
@@ -225,7 +238,7 @@ export default function ContactSection() {
                   name="state"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>State *</FormLabel>
+                      <FormLabel>Your Location *</FormLabel>
                       <Select
                         onValueChange={field.onChange}
                         defaultValue={field.value}

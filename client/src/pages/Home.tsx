@@ -10,6 +10,7 @@ import PartnersSection from "@/components/PartnersSection";
 import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FloatingContactButton from "@/components/FloatingContactButton";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <CTASection />
       <ContactSection />
       <Footer />
+      <FloatingContactButton />
     </div>
   );
 }
