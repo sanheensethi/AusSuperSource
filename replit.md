@@ -31,8 +31,17 @@ Preferred communication style: Simple, everyday language.
 
 **Component Structure:**
 - **Page-level components** (`/pages`): Home, About, Services, Team, Accountants, Trustees, Contact, Login, Privacy
-- **Section components** (`/components`): Hero, StatsSection, ServicesSection, TeamSection, ContactSection, CTASection, ValueProposition, HowItWorks, Testimonials, PartnersSection, Navbar, Footer
+- **Section components** (`/components`): Hero, StatsSection, ServicesSection, TeamSection, ContactSection, CTASection, ValueProposition, HowItWorks, Testimonials, PartnersSection, Navbar, Footer, FloatingContactButton
 - **UI primitives** (`/components/ui`): Shadcn components (Button, Card, Form, Input, Dialog, etc.)
+
+**Recent Changes (October 28, 2025):**
+- Enhanced About, Services, and Team pages with colored hero sections and visual backgrounds
+- Updated Contact section to display 3 locations: Sydney (Head Office), Victoria (Melbourne), and Adelaide (SA)
+- Changed contact form field from "State" to "Your Location" for better clarity
+- Implemented floating contact button with smooth animations and multiple close options
+  - Positioned at bottom-right with popup card sliding from the right
+  - Provides quick access to contact options (message, call, email)
+  - Z-index layering ensures button remains clickable when popup is open
 
 **Routing:**
 - Routes: `/` (home), `/about`, `/services`, `/team`, `/accountants`, `/trustees`, `/contact`, `/login`, `/privacy`
