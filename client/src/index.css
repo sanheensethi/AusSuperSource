@@ -23,92 +23,92 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/* LIGHT MODE */
+/* DARK MODE - Based on AusSuperSource Business Card */
 :root {
-  --button-outline: rgba(0,0,0, .10);
-  --badge-outline: rgba(0,0,0, .05);
+  --button-outline: rgba(255,255,255, .12);
+  --badge-outline: rgba(255,255,255, .06);
 
   /* Automatic computation of border around primary / danger buttons */
-  --opaque-button-border-intensity: -8; /* In terms of percentages */
+  --opaque-button-border-intensity: 8; /* In terms of percentages */
 
   /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(0,0,0, .03);
-  --elevate-2: rgba(0,0,0, .08);
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .10);
 
-  --background: 0 0% 100%;
+  --background: 215 12% 16%;
 
-  --foreground: 222 47% 11%;
+  --foreground: 0 0% 98%;
 
-  --border: 220 13% 91%;
+  --border: 215 12% 24%;
 
-  --card: 0 0% 98%;
+  --card: 215 12% 20%;
 
-  --card-foreground: 222 47% 11%;
+  --card-foreground: 0 0% 98%;
 
-  --card-border: 220 13% 94%;
+  --card-border: 215 12% 26%;
 
-  --sidebar: 220 14% 96%;
+  --sidebar: 215 12% 18%;
 
-  --sidebar-foreground: 222 47% 11%;
+  --sidebar-foreground: 0 0% 98%;
 
-  --sidebar-border: 220 13% 91%;
+  --sidebar-border: 215 12% 24%;
 
-  --sidebar-primary: 214 95% 45%;
+  --sidebar-primary: 213 60% 52%;
 
   --sidebar-primary-foreground: 0 0% 100%;
 
-  --sidebar-accent: 220 14% 91%;
+  --sidebar-accent: 215 12% 22%;
 
-  --sidebar-accent-foreground: 222 47% 11%;
+  --sidebar-accent-foreground: 0 0% 98%;
 
-  --sidebar-ring: 214 95% 45%;
+  --sidebar-ring: 213 60% 52%;
 
-  --popover: 0 0% 96%;
+  --popover: 215 12% 19%;
 
-  --popover-foreground: 222 47% 11%;
+  --popover-foreground: 0 0% 98%;
 
-  --popover-border: 220 13% 91%;
+  --popover-border: 215 12% 26%;
 
-  --primary: 214 95% 45%;
+  --primary: 213 60% 52%;
 
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 220 14% 93%;
+  --secondary: 215 12% 24%;
 
-  --secondary-foreground: 222 47% 11%;
+  --secondary-foreground: 0 0% 98%;
 
-  --muted: 220 13% 95%;
+  --muted: 215 12% 22%;
 
-  --muted-foreground: 222 20% 40%;
+  --muted-foreground: 215 8% 65%;
 
-  --accent: 214 32% 91%;
+  --accent: 213 50% 28%;
 
-  --accent-foreground: 222 47% 11%;
+  --accent-foreground: 0 0% 98%;
 
-  --destructive: 0 84% 37%;
+  --destructive: 0 84% 50%;
 
   --destructive-foreground: 0 0% 100%;
 
-  --input: 220 13% 85%;
-  --ring: 214 95% 45%;
-  --chart-1: 214 95% 35%;
-  --chart-2: 198 88% 38%;
-  --chart-3: 186 75% 42%;
-  --chart-4: 172 66% 45%;
-  --chart-5: 158 58% 48%;
+  --input: 215 12% 28%;
+  --ring: 213 60% 52%;
+  --chart-1: 213 60% 58%;
+  --chart-2: 198 70% 55%;
+  --chart-3: 186 65% 52%;
+  --chart-4: 172 60% 50%;
+  --chart-5: 158 55% 48%;
 
   --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, Monaco, "Courier New", monospace;
   --radius: .5rem; /* 8px */
-  --shadow-2xs: 0px 1px 2px 0px hsl(220 13% 11% / 0.05);
-  --shadow-xs: 0px 1px 3px 0px hsl(220 13% 11% / 0.08);
-  --shadow-sm: 0px 2px 4px 0px hsl(220 13% 11% / 0.06), 0px 1px 2px -1px hsl(220 13% 11% / 0.04);
-  --shadow: 0px 4px 6px -1px hsl(220 13% 11% / 0.08), 0px 2px 4px -2px hsl(220 13% 11% / 0.04);
-  --shadow-md: 0px 6px 12px -2px hsl(220 13% 11% / 0.10), 0px 3px 6px -3px hsl(220 13% 11% / 0.05);
-  --shadow-lg: 0px 10px 20px -4px hsl(220 13% 11% / 0.12), 0px 5px 10px -5px hsl(220 13% 11% / 0.06);
-  --shadow-xl: 0px 20px 25px -5px hsl(220 13% 11% / 0.15), 0px 10px 15px -6px hsl(220 13% 11% / 0.08);
-  --shadow-2xl: 0px 25px 50px -12px hsl(220 13% 11% / 0.20);
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.30);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.40);
+  --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.35), 0px 1px 2px -1px hsl(0 0% 0% / 0.25);
+  --shadow: 0px 4px 6px -1px hsl(0 0% 0% / 0.40), 0px 2px 4px -2px hsl(0 0% 0% / 0.25);
+  --shadow-md: 0px 6px 12px -2px hsl(0 0% 0% / 0.45), 0px 3px 6px -3px hsl(0 0% 0% / 0.30);
+  --shadow-lg: 0px 10px 20px -4px hsl(0 0% 0% / 0.50), 0px 5px 10px -5px hsl(0 0% 0% / 0.35);
+  --shadow-xl: 0px 20px 25px -5px hsl(0 0% 0% / 0.60), 0px 10px 15px -6px hsl(0 0% 0% / 0.40);
+  --shadow-2xl: 0px 25px 50px -12px hsl(0 0% 0% / 0.70);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 
