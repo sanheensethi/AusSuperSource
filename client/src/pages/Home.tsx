@@ -2,7 +2,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsSection from "@/components/StatsSection";
 import ValueProposition from "@/components/ValueProposition";
+import HowItWorks from "@/components/HowItWorks";
 import ServicesSection from "@/components/ServicesSection";
+import Testimonials from "@/components/Testimonials";
 import TeamSection from "@/components/TeamSection";
 import PartnersSection from "@/components/PartnersSection";
 import CTASection from "@/components/CTASection";
@@ -16,9 +18,11 @@ export default function Home() {
       <Hero />
       <StatsSection />
       <ValueProposition />
+      <HowItWorks />
       <ServicesSection />
-      <TeamSection />
+      <Testimonials />
       <PartnersSection />
+      <TeamSection />
       <CTASection />
       <ContactSection />
       <Footer />

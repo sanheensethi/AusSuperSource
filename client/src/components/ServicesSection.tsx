@@ -1,72 +1,141 @@
+import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { FileCheck, Settings, FileText, DollarSign, ClipboardCheck, Users, FileSignature } from "lucide-react";
 
 const services = [
   {
-    icon: <FileCheck className="h-10 w-10" />,
-    title: "Audit Services",
-    description: "A SMSF Auditor registered by ASIC",
+    icon: FileCheck,
+    title: "SMSF Auditing",
+    category: "Compliance",
+    description: "Comprehensive and Independent SMSF Audit Solutions in strict accordance with ASAE 3100 and GS 009 standards",
+    features: [
+      "Financial Statement Audit",
+      "Compliance Audit & SISA/SISR evaluation",
+      "Independent Auditor's Report (IAR)",
+      "Audit Contravention Reporting",
+    ]
   },
   {
-    icon: <Settings className="h-10 w-10" />,
-    title: "Fund Setup",
-    description: "We can assist you in SMSF setup, opening bank accounts for super fund",
+    icon: Settings,
+    title: "Outsourcing SMSF Solution",
+    category: "Administration",
+    description: "Seamless, End-to-End SMSF Outsourcing Solutions for accounting firms, financial advisors, and trustees",
+    features: [
+      "SMSF Setup and Registration",
+      "Ongoing Compliance Management",
+      "Accounting and Bookkeeping",
+      "Taxation and Regulatory Filings",
+    ]
   },
   {
-    icon: <FileText className="h-10 w-10" />,
-    title: "Trust Deed Variations & Updates",
-    description: "Service to the member application(s) to become member (where applicable)",
+    icon: ClipboardCheck,
+    title: "Pre-Audit Readiness",
+    category: "Preparation",
+    description: "Proactive SMSF Audit Preparation and Risk Minimization to ensure smooth, timely audits",
+    features: [
+      "Document Review and Gap Analysis",
+      "Bank and Ledger Reconciliations",
+      "Contribution and Benefit Verification",
+      "Mock Audit and Risk Identification",
+    ]
   },
   {
-    icon: <FileSignature className="h-10 w-10" />,
+    icon: FileText,
+    title: "Trust Deed Variations",
+    category: "Documentation",
+    description: "Expert service for trust deed updates and member applications to ensure fund compliance",
+    features: [
+      "Trust deed amendments",
+      "Member application processing",
+      "Regulatory compliance review",
+      "Documentation updates",
+    ]
+  },
+  {
+    icon: FileSignature,
     title: "Lump Sum Documentation",
-    description: "Service to prepare ATO registrations and documentation (where applicable)",
+    category: "Benefits",
+    description: "Comprehensive preparation of ATO registrations and benefit payment documentation",
+    features: [
+      "ATO registration support",
+      "Benefit payment documents",
+      "Compliance verification",
+      "Trustee guidance",
+    ]
   },
   {
-    icon: <DollarSign className="h-10 w-10" />,
-    title: "Commencement of Pension",
-    description: "Documents regarding reversionary / non-reversionary pensions and calculation",
-  },
-  {
-    icon: <ClipboardCheck className="h-10 w-10" />,
-    title: "Administration, Compliance & Audit",
-    description: "Arrangement for SMSF audit, Preparation of Financial Statements and Tax Return",
-  },
-  {
-    icon: <Users className="h-10 w-10" />,
-    title: "Admission & Retirement",
-    description: "ATO submission documentation and Member application(s) to become member",
+    icon: DollarSign,
+    title: "Pension Commencement",
+    category: "Retirement",
+    description: "Complete pension documentation and calculation services for reversionary and non-reversionary pensions",
+    features: [
+      "Pension documentation",
+      "Payment calculations",
+      "Reversionary pension setup",
+      "Compliance checks",
+    ]
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 md:py-24 lg:py-32">
+    <section id="services" className="py-20 md:py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Our Services
+            Comprehensive SMSF Solutions
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive SMSF solutions tailored to your needs
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            From auditing to outsourcing—whatever your SMSF needs, we've got you covered with expert solutions
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" data-list="services">
           {services.map((service, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="p-6 md:p-8 hover-elevate transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               data-entity-type="service"
               data-entity-id={`service-${index}`}
-              data-testid={`service-${index}`}
             >
-              <div className="text-primary mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold mb-3" data-col="title">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed" data-col="description">
-                {service.description}
-              </p>
-            </Card>
+              <Card className="p-6 md:p-8 h-full hover-elevate transition-all duration-300 flex flex-col" data-testid={`service-${index}`}>
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <service.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-xs font-semibold text-primary mb-1 uppercase tracking-wide">
+                      {service.category}
+                    </div>
+                    <h3 className="text-xl font-semibold" data-col="title">
+                      {service.title}
+                    </h3>
+                  </div>
+                </div>
+                
+                <p className="text-muted-foreground mb-4 leading-relaxed" data-col="description">
+                  {service.description}
+                </p>
+
+                <ul className="mt-auto space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start text-sm text-muted-foreground">
+                      <span className="mr-2 mt-1 text-primary">•</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

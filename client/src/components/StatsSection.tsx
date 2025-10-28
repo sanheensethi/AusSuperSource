@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
-import { CheckCircle, Clock, Users, Building } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface StatCardProps {
-  icon: React.ReactNode;
   value: number;
   suffix?: string;
   prefix?: string;
   label: string;
+  description: string;
   dataKpi: string;
 }
 
-function StatCard({ icon, value, suffix = "", prefix = "", label, dataKpi }: StatCardProps) {
+function StatCard({ value, suffix = "", prefix = "", label, description, dataKpi }: StatCardProps) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -49,67 +49,90 @@ function StatCard({ icon, value, suffix = "", prefix = "", label, dataKpi }: Sta
   }, [value, hasAnimated]);
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className="flex flex-col items-center text-center p-6"
+      className="text-center p-6"
       data-kpi={dataKpi}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
     >
-      <div className="mb-4 text-primary">
-        {icon}
+      <div className="mb-2">
+        <span className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary" data-testid={`stat-${dataKpi}`}>
+          {prefix}{count}{suffix}
+        </span>
       </div>
-      <div className="text-4xl md:text-5xl font-bold mb-2" data-testid={`stat-${dataKpi}`}>
-        {prefix}{count}{suffix}
-      </div>
-      <div className="text-sm md:text-base text-muted-foreground">
+      <div className="text-base md:text-lg font-semibold mb-1">
         {label}
       </div>
-    </div>
+      <div className="text-sm text-muted-foreground">
+        {description}
+      </div>
+    </motion.div>
   );
 }
 
 export default function StatsSection() {
   return (
-    <section className="py-20 md:py-24 lg:py-32 bg-muted/30">
+    <section className="py-16 md:py-20 lg:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Trusted SMSF Partner Across Australia
+            SMSF Expertise You Can Count On
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Delivering exceptional SMSF services with proven results and unmatched expertise
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            At AusSuperSource, we're on a mission to make SMSF management simple, fast, and stress-free. 
+            Our professional team delivers comprehensive solutions that exceed expectations.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <StatCard
-            icon={<CheckCircle className="h-12 w-12 md:h-16 md:w-16" />}
             value={100}
             suffix="%"
-            label="ASIC Registered Auditor"
+            label="Compliant SMSF Audits"
+            description="We ensure every audit meets ASAE 3100 and GS 009 standards—guaranteed"
             dataKpi="asic-registered"
           />
           <StatCard
-            icon={<Users className="h-12 w-12 md:h-16 md:w-16" />}
             value={8}
             suffix="+"
             label="Years Experience"
+            description="Team powered by Chartered Accountants and CPAs with deep expertise"
             dataKpi="years-experience"
           />
           <StatCard
-            icon={<Building className="h-12 w-12 md:h-16 md:w-16" />}
-            value={300}
-            suffix="+"
-            label="SMSFs Administered"
+            value={5}
+            label="Days Turnaround"
+            description="Get your SMSF audit completed and IAR delivered in 5 business days"
             dataKpi="smsf-administered"
           />
           <StatCard
-            icon={<Clock className="h-12 w-12 md:h-16 md:w-16" />}
-            value={25}
-            suffix="+"
-            label="Years Director Experience"
+            value={48}
+            label="Hours Processing"
+            description="90% of pre-audit tasks completed within 48 hours from submission"
             dataKpi="director-experience"
           />
         </div>
+
+        <motion.div
+          className="text-center mt-12 md:mt-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <p className="text-lg font-medium text-foreground">
+            Trusted by hundreds of Australian businesses for maximum compliance and peace of mind
+          </p>
+        </motion.div>
       </div>
     </section>
   );

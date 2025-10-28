@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -10,8 +11,16 @@ export default function CTASection() {
   };
 
   return (
-    <section className="py-20 md:py-24 lg:py-32 bg-primary text-primary-foreground">
-      <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+    <section className="py-20 md:py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/90" />
+      
+      <motion.div
+        className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
           Partner with AusSuperSource
         </h2>
@@ -31,7 +40,7 @@ export default function CTASection() {
           Contact Us Today
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
-      </div>
+      </motion.div>
     </section>
   );
 }
