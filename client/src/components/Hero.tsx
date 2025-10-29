@@ -1,9 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award } from "lucide-react";
 import { Link } from "wouter";
+import { useState, useEffect } from "react";
 import heroImage from "@assets/generated_images/Professional_SMSF_office_collaboration_e65dfd08.png";
+import cpaLogo from "@/images/CPA.jpg";
+import asicLogo from "@/images/ASIC.png";
+import bglLogo from "@/images/Logo_BGL.png";
 
 export default function Hero() {
+  const titles = ["Stress Free SMSF", "SMSF Health Check"];
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
@@ -18,17 +32,21 @@ export default function Hero() {
           <div className="flex items-center gap-2 mb-6">
             <Award className="h-6 w-6 text-white" />
             <span className="text-sm font-medium text-white/90">
-              8+ Years of SMSF Excellence
+              18+ Years of SMSF Excellence
             </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-            Stress Free{" "}
-            <span className="text-primary">SMSF Management</span>
+            <span
+              key={currentTitleIndex}
+              className="inline-block text-primary animate-fadeIn"
+            >
+              {titles[currentTitleIndex]}
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-            Expert advice and administration of SMSF. Facilitating Accountants & Financial advisors on wholesale SMSF solution provider throughout Australia.
+            Expert advice and administration of SMSF. One Stop SMSF solution provider for everyone throughout Australia.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -39,7 +57,7 @@ export default function Hero() {
                 data-action="hero.contact"
                 data-testid="button-contact-us"
               >
-                Contact Us Today
+                Book a Free call
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -58,8 +76,8 @@ export default function Hero() {
 
           <div className="flex flex-wrap gap-6 items-center">
             <div className="flex items-center gap-2">
-              <div className="h-12 w-12 rounded-md bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
-                <Award className="h-6 w-6 text-white" />
+              <div className="h-16 w-16 rounded-md bg-white/90 backdrop-blur-md flex items-center justify-center border border-white/30 p-2">
+                <img src={asicLogo} alt="ASIC Registered" className="w-full h-full object-contain" />
               </div>
               <div className="text-white">
                 <div className="text-xs font-semibold">ASIC Registered</div>
@@ -67,8 +85,8 @@ export default function Hero() {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <div className="h-12 w-12 rounded-md bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
-                <Award className="h-6 w-6 text-white" />
+              <div className="h-16 w-16 rounded-md bg-white/90 backdrop-blur-md flex items-center justify-center border border-white/30 p-2">
+                <img src={cpaLogo} alt="CPA Australia" className="w-full h-full object-contain" />
               </div>
               <div className="text-white">
                 <div className="text-xs font-semibold">CPA Australia</div>
@@ -76,13 +94,22 @@ export default function Hero() {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <div className="h-12 w-12 rounded-md bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
+              <div className="h-16 w-16 rounded-md bg-white/90 backdrop-blur-md flex items-center justify-center border border-white/30 p-2">
+                <img src={bglLogo} alt="BGL 360 Certified" className="w-full h-full object-contain" />
+              </div>
+              <div className="text-white">
+                <div className="text-xs font-semibold">BGL 360</div>
+                <div className="text-xs text-white/80">Certified</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              {/* <div className="h-12 w-12 rounded-md bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
                 <Award className="h-6 w-6 text-white" />
               </div>
               <div className="text-white">
                 <div className="text-xs font-semibold">300+ SMSFs</div>
                 <div className="text-xs text-white/80">Under Administration</div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -109,17 +109,6 @@ export default function Navbar() {
                 </Link>
               </div>
             </div>
-            <Link href="/contact">
-              <button
-                className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors ${
-                  (isScrolled || !isHome) ? "" : "text-white"
-                }`}
-                data-nav-item="contact"
-                data-testid="link-contact"
-              >
-                Contact
-              </button>
-            </Link>
             <Link href="/login">
               <Button
                 variant="outline"
@@ -199,15 +188,6 @@ export default function Navbar() {
                 className="block w-full text-left px-3 py-2 rounded-md hover-elevate transition-colors pl-6 text-sm"
               >
                 Trustee Clients
-              </button>
-            </Link>
-            <Link href="/contact">
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-left px-3 py-2 rounded-md hover-elevate transition-colors"
-                data-testid="link-contact-mobile"
-              >
-                Contact
               </button>
             </Link>
             <Link href="/login">

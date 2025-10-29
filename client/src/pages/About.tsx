@@ -20,7 +20,7 @@ export default function About() {
     {
       icon: Award,
       title: "Excellence",
-      description: "8+ years of experience delivering compliant, professional SMSF solutions"
+      description: "18+ years of experience delivering compliant, professional SMSF solutions"
     }
   ];
 
@@ -29,9 +29,9 @@ export default function About() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-[hsl(var(--dark-section))] text-[hsl(var(--dark-section-foreground))]">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-br from-slate-700 via-slate-800 to-blue-900 text-white">
         <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,27 +39,27 @@ export default function About() {
           >
             About Us
           </motion.h1>
-          <motion.p 
-            className="text-xl text-[hsl(var(--dark-section-foreground))]/70"
+          <motion.p
+            className="text-xl text-white/80"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Your trusted SMSF partner for over 8 years
+            Your trusted SMSF partner for over 18 years
           </motion.p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed mb-6 text-foreground">
-              Australian Super Source Pty Ltd, specialist self-managed superannuation firm, has been facilitating Accountants & Financial advisors on wholesale SMSF solution provider for more than 8 years, based in Sydney and offering services throughout Australia.
+              Australian Super Source Pty Ltd, a specialized SMSF compliance and advisory firm, has been facilitating Accountants, Financial advisors, Mortgage Brocker, Real estate Professional and Mom and Dads (individual) on wholesale SMSF solution provider for more than 18 years, offering services throughout Australia.
             </p>
 
             <p className="text-lg leading-relaxed mb-6 text-foreground">
-              Our staff are regularly keeping an eye on changes to legislation to ensure you and clients, are informed & kept up to date with the current best practice for SMSF management.
+              We regularly keep an eye on changes to legislation to ensure you and clients, are informed & kept up to date with the current best practice for SMSF management.
             </p>
 
             <p className="text-lg leading-relaxed mb-8 text-foreground">
@@ -79,7 +79,7 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40">
         <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

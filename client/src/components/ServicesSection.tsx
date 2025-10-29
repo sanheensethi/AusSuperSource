@@ -41,11 +41,11 @@ const services = [
   },
   {
     icon: FileText,
-    title: "Trust Deed Variations",
+    title: "Compliance Framework and management",
     category: "Documentation",
     description: "Expert service for trust deed updates and member applications to ensure fund compliance",
     features: [
-      "Trust deed amendments",
+      "Trust deed amendments and variations",
       "Member application processing",
       "Regulatory compliance review",
       "Documentation updates",
@@ -79,7 +79,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 md:py-24 lg:py-32 bg-white">
+    <section id="services" className="py-20 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"

@@ -102,7 +102,7 @@ export default function StatsSection() {
             dataKpi="asic-registered"
           />
           <StatCard
-            value={8}
+            value={18}
             suffix="+"
             label="Years Experience"
             description="Team powered by Chartered Accountants and CPAs with deep expertise"
@@ -111,7 +111,7 @@ export default function StatsSection() {
           <StatCard
             value={5}
             label="Days Turnaround"
-            description="Get your SMSF audit completed and IAR delivered in 5 business days"
+            description="Get your SMSF audit completed and delivered in 5 business days"
             dataKpi="smsf-administered"
           />
           <StatCard
@@ -130,7 +130,7 @@ export default function StatsSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-lg font-medium text-foreground">
-            Trusted by hundreds of Australian businesses for maximum compliance and peace of mind
+            Trusted by hundreds of Australian for maximum compliance and peace of mind
           </p>
         </motion.div>
       </div>

@@ -1,9 +1,12 @@
 import { Link } from "wouter";
 import { Twitter, Facebook, Linkedin } from "lucide-react";
+import cpaLogo from "@/images/CPA.jpg";
+import asicLogo from "@/images/ASIC.png";
+import bglLogo from "@/images/Logo_BGL.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-muted border-t">
+    <footer className="bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 border-t">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="lg:col-span-2">
@@ -11,39 +14,33 @@ export default function Footer() {
               AusSuperSource
             </h3>
             <p className="text-muted-foreground max-w-md leading-relaxed mb-6">
-              Specialist self-managed superannuation firm, facilitating Accountants & Financial advisors on wholesale SMSF solution provider for more than 8 years, based in Sydney and offering services throughout Australia.
+              Specialist self-managed superannuation firm, facilitating Accountants & Financial advisors on wholesale SMSF solution provider for more than 18 years, based in Sydney and offering services throughout Australia.
             </p>
             
             <div>
               <h4 className="font-semibold mb-3">Supportive Partners</h4>
-              <div className="flex flex-wrap gap-4 items-center">
-                <img
-                  src="https://via.placeholder.com/80x80/0066cc/ffffff?text=SPAA"
-                  alt="SPAA Specialist"
-                  className="h-16 w-auto"
-                />
-                <img
-                  src="https://via.placeholder.com/120x60/003366/ffffff?text=CPA+Australia"
-                  alt="CPA Australia"
-                  className="h-12 w-auto"
-                />
-                <img
-                  src="https://via.placeholder.com/140x40/0099cc/ffffff?text=SimpleFund+360"
-                  alt="SimpleFund 360"
-                  className="h-10 w-auto"
-                />
-              </div>
-              <div className="flex flex-wrap gap-4 items-center mt-3">
-                <img
-                  src="https://via.placeholder.com/120x40/99cc33/ffffff?text=Simple+Fund"
-                  alt="Simple Fund"
-                  className="h-10 w-auto"
-                />
-                <img
-                  src="https://via.placeholder.com/120x40/006699/ffffff?text=Portal+by+BGL"
-                  alt="Portal by BGL"
-                  className="h-10 w-auto"
-                />
+              <div className="flex flex-wrap gap-6 items-center">
+                <div className="bg-white p-3 rounded-md border border-gray-200">
+                  <img
+                    src={asicLogo}
+                    alt="ASIC Registered"
+                    className="h-14 w-auto object-contain"
+                  />
+                </div>
+                <div className="bg-white p-3 rounded-md border border-gray-200">
+                  <img
+                    src={cpaLogo}
+                    alt="CPA Australia"
+                    className="h-14 w-auto object-contain"
+                  />
+                </div>
+                <div className="bg-white p-3 rounded-md border border-gray-200">
+                  <img
+                    src={bglLogo}
+                    alt="BGL 360 Certified"
+                    className="h-14 w-auto object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-20 md:py-24 lg:py-32 bg-[hsl(var(--dark-section))] text-[hsl(var(--dark-section-foreground))]">
+    <section id="team" className="py-20 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -33,8 +33,8 @@ export default function TeamSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Our Expert Team
           </h2>
-          <p className="text-lg md:text-xl text-[hsl(var(--dark-section-foreground))]/70 max-w-3xl mx-auto">
-            Australian Super Source Pty Ltd, specialist self-managed superannuation firm, has been facilitating Accountants & Financial advisors on wholesale SMSF solution provider for more than 8 years, based in Sydney and offering services throughout Australia.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Australian Super Source Pty Ltd, specialist self-managed superannuation firm, has been facilitating Accountants & Financial advisors on wholesale SMSF solution provider for more than 18 years, based in Sydney and offering services throughout Australia.
           </p>
         </motion.div>
 
