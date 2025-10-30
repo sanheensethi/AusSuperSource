@@ -70,20 +70,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/accountants">
-                  <button className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    Accountants & Advisors
-                  </button>
-                </Link>
-              </li>
-              <li>
-                <Link href="/trustees">
-                  <button className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    Trustee Clients
-                  </button>
-                </Link>
-              </li>
-              <li>
                 <Link href="/privacy">
                   <button className="text-muted-foreground hover:text-primary transition-colors text-sm">
                     Privacy Statement

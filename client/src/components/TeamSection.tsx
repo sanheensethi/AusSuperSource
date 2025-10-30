@@ -17,6 +17,20 @@ const teamMembers = [
     email: "suresh@aussupersource.com.au",
     image: "https://i.pravatar.cc/400?img=13",
   },
+  {
+    name: "Sarah Mitchell",
+    role: "SMSF Compliance Manager",
+    bio: "Sarah Mitchell brings over 15 years of experience in SMSF compliance and regulatory affairs. She specializes in ensuring funds meet all legislative requirements and helps clients navigate complex regulatory changes. Her attention to detail and proactive approach ensures our clients' funds remain compliant and optimized.",
+    email: "sarah@aussupersource.com.au",
+    image: "https://i.pravatar.cc/400?img=47",
+  },
+  {
+    name: "David Chen",
+    role: "Investment Advisor, CFP",
+    bio: "David Chen is a Certified Financial Planner with extensive experience in SMSF investment strategies. He works closely with trustees to develop tailored investment portfolios that align with their retirement goals while maintaining compliance. His expertise in both domestic and international investment options provides clients with comprehensive wealth management solutions.",
+    email: "david@aussupersource.com.au",
+    image: "https://i.pravatar.cc/400?img=33",
+  },
 ];
 
 export default function TeamSection() {

@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { FileCheck, Settings, FileText, DollarSign, ClipboardCheck, Users, FileSignature } from "lucide-react";
+import ASICLogo from "@/images/ASIC.png";
+import CPALogo from "@/images/CPA.jpg";
+import BGLLogo from "@/images/Logo_BGL.png";
 
 const services = [
   {
@@ -65,9 +68,9 @@ const services = [
   },
   {
     icon: DollarSign,
-    title: "Pension Commencement",
+    title: "Pension Planning and Commencement",
     category: "Retirement",
-    description: "Complete pension documentation and calculation services for reversionary and non-reversionary pensions",
+    description: "Solving asset rich cash poor smsf problems during the pension phase",
     features: [
       "Pension documentation",
       "Payment calculations",
@@ -121,7 +124,7 @@ export default function ServicesSection() {
                     </h3>
                   </div>
                 </div>
-                
+
                 <p className="text-muted-foreground mb-4 leading-relaxed" data-col="description">
                   {service.description}
                 </p>
@@ -138,6 +141,49 @@ export default function ServicesSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Credentials Section */}
+        {/* <motion.div
+          className="mt-20 pt-16 border-t"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-3">Our Credentials</h3>
+            <p className="text-muted-foreground">Trusted partnerships and professional certifications</p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            <motion.div
+              className="grayscale hover:grayscale-0 transition-all duration-300"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <img src={ASICLogo} alt="ASIC Registered" className="h-16 md:h-20 object-contain" />
+            </motion.div>
+            <motion.div
+              className="grayscale hover:grayscale-0 transition-all duration-300"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <img src={CPALogo} alt="CPA Australia" className="h-16 md:h-20 object-contain" />
+            </motion.div>
+            <motion.div
+              className="grayscale hover:grayscale-0 transition-all duration-300"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <img src={BGLLogo} alt="BGL Partner" className="h-16 md:h-20 object-contain" />
+            </motion.div>
+          </div>
+        </motion.div> */}
       </div>
     </section>
   );

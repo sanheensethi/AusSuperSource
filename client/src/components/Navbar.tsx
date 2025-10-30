@@ -87,37 +87,16 @@ export default function Navbar() {
                 Our Team
               </button>
             </Link>
-            <div className="relative group">
+            <Link href="/contact">
               <button
                 className={`text-sm font-medium hover-elevate px-3 py-2 rounded-md transition-colors ${
                   (isScrolled || !isHome) ? "" : "text-white"
                 }`}
-                data-testid="link-how-we-do"
+                data-nav-item="contact"
+                data-testid="link-contact"
               >
-                How We Do
+                Contact Us
               </button>
-              <div className="absolute left-0 mt-2 w-56 bg-background border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <Link href="/accountants">
-                  <button className="block w-full text-left px-4 py-3 hover-elevate text-sm">
-                    Accountants & Advisors
-                  </button>
-                </Link>
-                <Link href="/trustees">
-                  <button className="block w-full text-left px-4 py-3 hover-elevate text-sm">
-                    Trustee Clients
-                  </button>
-                </Link>
-              </div>
-            </div>
-            <Link href="/login">
-              <Button
-                variant="outline"
-                size="sm"
-                className={(isScrolled || !isHome) ? "" : "text-white border-white/60 hover:bg-white/20 backdrop-blur-sm bg-white/10"}
-                data-testid="button-login"
-              >
-                Client Login
-              </Button>
             </Link>
           </div>
 
@@ -174,31 +153,14 @@ export default function Navbar() {
                 Our Team
               </button>
             </Link>
-            <Link href="/accountants">
+            <Link href="/contact">
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-left px-3 py-2 rounded-md hover-elevate transition-colors pl-6 text-sm"
+                className="block w-full text-left px-3 py-2 rounded-md hover-elevate transition-colors"
+                data-testid="link-contact-mobile"
               >
-                Accountants & Advisors
+                Contact Us
               </button>
-            </Link>
-            <Link href="/trustees">
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-left px-3 py-2 rounded-md hover-elevate transition-colors pl-6 text-sm"
-              >
-                Trustee Clients
-              </button>
-            </Link>
-            <Link href="/login">
-              <Button
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="outline"
-                className="w-full mt-2"
-                data-testid="button-login-mobile"
-              >
-                Client Login
-              </Button>
             </Link>
           </div>
         </div>

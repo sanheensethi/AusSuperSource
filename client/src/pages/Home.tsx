@@ -19,12 +19,11 @@ export default function Home() {
       <Hero />
       <StatsSection />
       <ValueProposition />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       <ServicesSection />
       <Testimonials />
       <PartnersSection />
       <TeamSection />
-      <CTASection />
       <ContactSection />
       <Footer />
       <FloatingContactButton />

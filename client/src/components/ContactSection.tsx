@@ -97,9 +97,9 @@ export default function ContactSection() {
               <div className="flex items-start gap-3 mb-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-lg mb-1">Sydney (Head Office)</h4>
+                  <h4 className="font-semibold text-lg mb-1">Sydney</h4>
                   <p className="text-muted-foreground text-sm">
-                    PO Box 1213, Burwood, NSW 1805
+                    180, Level 7/186 Burwood Rd, Burwood NSW 2134
                   </p>
                 </div>
               </div>
@@ -127,11 +127,17 @@ export default function ContactSection() {
               <div className="flex items-start gap-3 mb-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-lg mb-1">Victoria (Melbourne)</h4>
+                  <h4 className="font-semibold text-lg mb-1">Melbourne (Victoria)</h4>
                   <p className="text-muted-foreground text-sm">
-                    Melbourne, VIC
+                    Office 3077, Ground Floor, 470, St Kilda Road, Melbourne (VIC) 3004
                   </p>
                 </div>
+              </div>
+              <div className="flex items-start gap-3 mb-2">
+                <Phone className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                <a href="tel:+61426784982" className="text-sm text-muted-foreground hover:text-primary transition-colors block">
+                  +61 426 784 982
+                </a>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
