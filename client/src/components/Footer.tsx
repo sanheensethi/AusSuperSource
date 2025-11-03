@@ -82,8 +82,11 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              <li>PO box 1213, Burwood, NSW 1805</li>
-              <li>
+              <li className="font-medium text-foreground">Sydney Office:</li>
+              <li>Level 7/186 Burwood Rd</li>
+              <li>Burwood NSW 2134</li>
+              <li className="mt-3">PO box 1213, Burwood, NSW 1805</li>
+              <li className="mt-3">
                 <a
                   href="tel:0289701102"
                   className="hover:text-primary transition-colors"

@@ -1,21 +1,30 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Mail, Linkedin } from "lucide-react";
+import sharatImage from "@/images/sharat.jpeg";
+import deepImage from "@/images/Deep.jpeg";
 
 const teamMembers = [
   {
     name: "Yateender Gupta",
-    role: "Director, CPA, SPAA (SSAud)",
-    bio: "Yateender Gupta, the Director, has provided trusted advice to thousands of personal clients over more than 25 years and is an acknowledged expert in areas of tax, Small Business Concessions, Structures and Self managed superannuation funds. His consulting experience ranges across a broad range of clients from individuals, SME's to leading manufacturing, trading companies, real-estate developers and medical practices.",
+    role: "Director, FCPA",
+    bio: "Yateender Gupta, FCPA and Director, has provided trusted advice to thousands of personal clients over more than 25 years and is an acknowledged expert in areas of tax, Small Business Concessions, Business Structures & Restructures and Self managed superannuation funds. His consulting experience ranges across a broad range of clients from individuals, SMEs in manufacturing, trading, real-estate developments and medical practices, NDIS & AgeCare, Motels.",
     email: "Yateen@aussupersource.com.au",
     image: "https://i.pravatar.cc/400?img=12",
   },
   {
-    name: "Suresh Jangra",
+    name: "Sharat Gupta",
+    role: "CPA, SPAA (SSAud)",
+    bio: "Sharat Gupta has provided trusted advice to thousands of personal clients over more than 25 years and is an acknowledged expert in areas of tax, Small Business Concessions, Structures and Self managed superannuation funds. His consulting experience ranges across a broad range of clients from individuals, SME's to leading manufacturing, trading companies, real-estate developers and medical practices.",
+    email: "sharat@aussupersource.com.au",
+    image: sharatImage,
+  },
+  {
+    name: "Deep Jangra",
     role: "Senior Consultant, CPA",
-    bio: "With significant expertise in self-managed super funds accounting and compliance as well as general retirement strategies, Suresh Jangra is the Senior Consultant at Australian Super Source Pty Ltd. He is well versed and always updated with the latest in the self-managed super fund industry. He is leading the Accounting, Compliance and Administration Division of Australian Super Source Pty Ltd, which is responsible for the administration of more than 300 SMSFs.",
+    bio: "With significant expertise in self-managed super funds accounting and compliance as well as general retirement strategies, Deep Jangra is the Senior Consultant at Australian Super Source Pty Ltd. He is well versed and always updated with the latest in the self-managed super fund industry. He is leading the Accounting, Compliance and Administration Division of Australian Super Source Pty Ltd, which is responsible for the administration of more than 300 SMSFs.",
     email: "suresh@aussupersource.com.au",
-    image: "https://i.pravatar.cc/400?img=13",
+    image: deepImage,
   },
   {
     name: "Sarah Mitchell",
@@ -23,13 +32,6 @@ const teamMembers = [
     bio: "Sarah Mitchell brings over 15 years of experience in SMSF compliance and regulatory affairs. She specializes in ensuring funds meet all legislative requirements and helps clients navigate complex regulatory changes. Her attention to detail and proactive approach ensures our clients' funds remain compliant and optimized.",
     email: "sarah@aussupersource.com.au",
     image: "https://i.pravatar.cc/400?img=47",
-  },
-  {
-    name: "David Chen",
-    role: "Investment Advisor, CFP",
-    bio: "David Chen is a Certified Financial Planner with extensive experience in SMSF investment strategies. He works closely with trustees to develop tailored investment portfolios that align with their retirement goals while maintaining compliance. His expertise in both domestic and international investment options provides clients with comprehensive wealth management solutions.",
-    email: "david@aussupersource.com.au",
-    image: "https://i.pravatar.cc/400?img=33",
   },
 ];
 
